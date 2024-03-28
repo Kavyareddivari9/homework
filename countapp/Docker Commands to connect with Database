@@ -1,0 +1,25 @@
+docker run \
+--detach \
+--name=[counter] \
+--env="MYSQL_ROOT_PASSWORD=[changeme]" \
+--publish 127.0.0.1:3306 \
+--volume=/root/docker/[container_name]/conf.d:/etc/mysql/conf.d \
+mysql
+--------------------------------------------------------------
+Docker Commands:
+sudo docker pull mysql/mysql-server:latest
+
+sudo docker run --name=[mysql-docker] -d mysql/mysql-server:latest
+
+sudo docker ps
+
+
+sudo docker logs [mysql_docker]
+
+sudo docker logs mysql_docker
+
+sudo docker -it mysql_docker bash
+
+sudo mkdir -p /root/docker/[mysql-docker]/conf.d
+
+sudo nano /root/docker/[mysql-docker]/conf.d/my-custom.cnf
